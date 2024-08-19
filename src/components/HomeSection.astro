@@ -2,9 +2,9 @@
 import Button from './Button.astro';
 ---
 
-<section
+<div
   id="home"
-  class="flex flex-col items-center justify-center w-full h-[125vh] relative"
+  class="flex flex-col bg-yellow-200 items-center justify-center min-w-full h-[125vh] relative"
 >
   <div
     class="flex flex-col items-center justify-center md:w-[600px] gap-3 w-[90%]"
@@ -35,6 +35,7 @@ import Button from './Button.astro';
     >
   </div>
   <svg
+    id="bend"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 100 15"
     preserveAspectRatio="none"
@@ -43,7 +44,7 @@ import Button from './Button.astro';
     <path d="M0 15 Q 50 0 100 15 L 100 15 0 15 Z" class="custom-fill-color"
     ></path>
   </svg>
-</section>
+</div>
 
 <style>
   #home {

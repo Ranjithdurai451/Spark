@@ -4,7 +4,7 @@
 
 <header
   id="header"
-  class="fixed left-0 top-0 px-12 py-4 flex items-center justify-between w-full z-[1]"
+  class="fixed left-0 top-0 px-12 py-4 flex items-center justify-between w-dvw z-[1]"
 >
   <div class="text-white font-semibold text-4xl logo">Spark</div>
 
@@ -17,17 +17,69 @@
     <a href="#contact" class="link">Contact Us</a>
     <a href="#testimony" class="link">Testimonials</a>
   </nav>
-  <div>
+  <div class="hidden lg:block">
     <button class="btn-flip" data-back="Now!" data-front="Get a Quote"></button>
   </div>
+  <label class="hamburger z-[2] block lg:hidden" id="menu-btn">
+    <input type="checkbox" id="menuBoolean" />
+    <svg viewBox="0 0 32 32">
+      <path
+        class="line line-top-bottom"
+        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+      ></path>
+      <path class="line" d="M7 16 27 16"></path>
+    </svg>
+  </label>
+  <div
+    id="mobile-nav"
+    class="fixed top-0 right-[-100%] max-w-[400px] w-[85%] bg-[rgba(0,0,0,0.9)] h-dvh flex px-[75px] py-[100px] flex-col gap-12 transition-[right] ease-in-out duration-700"
+  >
+    <a href="#home" class="text-white text-[25px] link w-fit mob-link">Home</a>
+    <a href="#about" class="text-white text-[25px] link w-fit mob-link"
+      >About Us</a
+    >
+    <a href="#services" class="text-white text-[25px] link w-fit mob-link"
+      >Services</a
+    >
+    <a href="#contact" class="text-white text-[25px] link w-fit mob-link"
+      >Contact Us</a
+    >
+    <a href="#testimony" class="text-white text-[25px] link w-fit mob-link"
+      >Testimonials</a
+    >
+  </div>
 </header>
+
 <script>
+  const mobLinks = document.querySelectorAll('.mob-link');
+  mobLinks.forEach((mobLink) => {
+    console.log();
+    mobLink.addEventListener('click', () => {
+      document.body.classList.remove('navbar-active');
+      document.getElementById('menuBoolean')?.click();
+    });
+  });
+  const menuBtn = document.getElementById('menu-btn');
+  const menu: any = document.getElementById('menuBoolean');
+  menuBtn?.addEventListener('click', () => {
+    if (menu?.checked) {
+      document.body.classList.add('navbar-active');
+    } else {
+      document.body.classList.remove('navbar-active');
+    }
+  });
   var header = document.getElementById('header');
+  var bend = document.getElementById('bend');
   var prevscroll = 0;
   window.addEventListener('scroll', () => {
-    console.log(window.scrollY);
-    if (window.scrollY > 700) header?.classList.add('white-theme');
-    else header?.classList.remove('white-theme');
+    const elementPosition = bend?.getBoundingClientRect().top || 0;
+    const viewportHeight = window.innerHeight;
+
+    if (elementPosition <= viewportHeight && elementPosition >= 0) {
+      header?.classList.remove('white-theme');
+    } else {
+      if (window.scrollY > 200) header?.classList.add('white-theme');
+    }
 
     let currentscroll = window.pageYOffset;
 
@@ -40,7 +92,56 @@
   });
 </script>
 
-<style>
+<style is:global>
+  body.navbar-active {
+    position: fixed;
+    #home {
+      filter: blur(2px);
+    }
+    #mobile-nav {
+      right: 0;
+    }
+  }
+  .hamburger {
+    cursor: pointer;
+  }
+
+  .hamburger input {
+    display: none;
+  }
+
+  .hamburger svg {
+    /* The size of the SVG defines the overall size */
+    height: 3em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition:
+      stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+
+  .hamburger input:checked + svg {
+    transform: rotate(-45deg);
+  }
+
+  .hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+
   #header {
     transition: top 0.8s ease-in-out;
   }
@@ -49,6 +150,9 @@
   }
   .white-theme {
     background-color: #fff;
+    .line {
+      stroke: black;
+    }
     .logo {
       color: black;
     }
