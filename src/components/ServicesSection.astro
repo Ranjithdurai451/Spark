@@ -1,0 +1,74 @@
+---
+import Image from 'astro/components/Image.astro';
+---
+
+<section
+  id="services"
+  class="w-full h-dvh flex flex-col gap-10 py-20 px-16 custom-bg-color"
+>
+  <h1
+    class="text-5xl w-fit font-semibold before:content-[''] before:block before:h-[4px] before:rounded-lg relative before:absolute before:bg-black before:w-[45%] before:left-0 before:-bottom-[8px]"
+  >
+    Our Services
+  </h1>
+
+  <div class="w-full grid grid-cols-3 gap-5">
+    <div class="flex flex-col gap-4">
+      <div class="w-full h-[300px] overflow-hidden rounded-2xl">
+        <Image
+          src="/service-1.jpeg"
+          alt={'Digital Marketing'}
+          width={100}
+          class={'rounded-2xl w-full h-full hover:scale-125 hover:transition hover:ease-in-out hover:duration-700 overflow-hidden'}
+          height={250}
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 px-4">
+        <h1 class="text-3xl font-medium">Digital Marketing</h1>
+        <p class="text-base font-light">
+          Boost your online presence and connect with more people using our
+          smart digital marketing strategies.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <div class="w-full h-[300px] overflow-hidden rounded-2xl">
+        <Image
+          src="/webservice.webp"
+          alt={'Web Development'}
+          width={100}
+          class={'rounded-2xl w-[100%] h-[300px] hover:scale-125 hover:transition hover:ease-in-out hover:duration-700 overflow-hidden'}
+          height={300}
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 px-4">
+        <h1 class="text-3xl font-medium">Digital Marketing</h1>
+        <p class="text-base font-light">
+          Boost your online presence and connect with more people using our
+          smart digital marketing strategies.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <div class="w-full h-[300px] overflow-hidden rounded-2xl">
+        <Image
+          src="/service-3.jpg"
+          alt={'Graphic Design'}
+          width={100}
+          class={'rounded-2xl w-[100%] h-[300px] hover:scale-125 hover:transition hover:ease-in-out hover:duration-700 overflow-hidden'}
+          height={300}
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 px-4">
+        <h1 class="text-3xl font-medium">Digital Marketing</h1>
+        <p class="text-base font-light">
+          Boost your online presence and connect with more people using our
+          smart digital marketing strategies.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

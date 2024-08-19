@@ -1,0 +1,56 @@
+---
+import Button from './Button.astro';
+---
+
+<section
+  id="home"
+  class="flex flex-col items-center justify-center w-full h-[125vh] relative"
+>
+  <div class="flex flex-col items-center justify-center w-[600px] gap-3">
+    <p class="text-white text-base">
+      Web Development and Digital Marketing Firm
+    </p>
+    <h1 class="text-white text-6xl font-bold text-center">
+      Grow your Business with Spark
+    </h1>
+    <p
+      class="text-white text-opacity-50 font-light text-base text-center w-[90%]"
+    >
+      Get a professional website and digital marketing support for your business
+      within your budget.
+    </p>
+
+    <Button variant="light" class="py-2 px-6">
+      <span>Let's Talk</span>
+      <svg
+        viewBox="0 0 24 24"
+        class="inline-block w-6 h-6 fill-current"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path
+          d="M15.0378 6.34317L13.6269 7.76069L16.8972 11.0157L3.29211 11.0293L3.29413 13.0293L16.8619 13.0157L13.6467 16.2459L15.0643 17.6568L20.7079 11.9868L15.0378 6.34317Z"
+          fill="currentColor"></path></svg
+      ></Button
+    >
+  </div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 15"
+    preserveAspectRatio="none"
+    class="absolute bottom-[-1px] lg:w-full h-[25dvh]"
+  >
+    <path d="M0 15 Q 50 0 100 15 L 100 15 0 15 Z" class="custom-fill-color"
+    ></path>
+  </svg>
+</section>
+
+<style>
+  #home {
+    background: linear-gradient(
+        rgb(27, 32, 34) 0%,
+        rgba(27, 32, 34, 0.65) 18.84%,
+        rgb(27, 32, 34) 100%
+      ),
+      url(/home.jpg);
+    background-size: cover;
+  }
+</style>

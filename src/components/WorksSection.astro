@@ -1,0 +1,160 @@
+---
+
+---
+
+<section
+  class="flex flex-col items-center justify-center w-full h-dvh custom-bg-color"
+>
+  <div
+    class="md:w-[650px] w-[90%] gap-6 flex flex-col items-center justify-center"
+  >
+    <h1 class="text-5xl font-semibold text-center">
+      We Help Brands Increase Their Online Presence
+    </h1>
+    <p class="text-base font-light text-center">
+      At Spark, we boost your brand's online visibility and engagement with
+      tailored digital strategies. Let us help you attract new customers and
+      grow your online presence effectively.
+    </p>
+    <div class="flex gap-4 flex-wrap justify-center">
+      <button class="btnEffect">
+        Real Estate Websites
+        <img
+          src="https://nexusinfo.in/wp-content/uploads/2024/04/1-1536x864.png"
+          alt=""
+        />
+      </button>
+      <button class="btnEffect">
+        University/College Websites
+        <img
+          src="https://nexusinfo.in/wp-content/uploads/2024/04/5-1536x864.png"
+          alt=""
+        />
+      </button>
+      <button class="btnEffect">
+        E-commerce Websites
+        <img
+          src="https://nexusinfo.in/wp-content/uploads/2024/04/4-1536x864.png"
+          alt=""
+        />
+      </button>
+      <button class="btnEffect">
+        Portfolio Websites
+        <img
+          src="https://nexusinfo.in/wp-content/uploads/2024/04/3-1536x864.png"
+          alt=""
+        />
+      </button>
+
+      <button class="btnEffect">
+        Healthcare Websites
+        <img
+          src="https://nexusinfo.in/wp-content/uploads/2024/04/2-1536x864.png"
+          alt=""
+        />
+      </button>
+      <button class="btnEffect">
+        Educational Websites
+        <img
+          src="https://nexusinfo.in/wp-content/uploads/2024/06/Screenshot-2024-06-18-at-10.43.01%E2%80%AFAM-1536x867.png"
+          alt=""
+        />
+      </button>
+      <button class="btnEffect">
+        Blogs/Personal Websites
+        <img
+          src="https://nexusinfo.in/wp-content/uploads/2024/06/Screenshot-2024-06-18-at-10.45.46%E2%80%AFAM-1536x826.png"
+          alt=""
+        />
+      </button>
+      <button class="btnEffect">
+        News/Media Websites
+        <img
+          src="https://nexusinfo.in/wp-content/uploads/2024/06/Screenshot-2024-06-18-at-10.43.26%E2%80%AFAM-1536x867.png"
+          alt=""
+        />
+      </button>
+      <button class="btnEffect">
+        Event Management Websites
+        <img
+          src="https://nexusinfo.in/wp-content/uploads/2024/06/Screenshot-2024-06-18-at-5.31.53%E2%80%AFPM-1536x826.png"
+          alt=""
+        />
+      </button>
+    </div>
+  </div>
+</section>
+<script>
+  const hoverEffectbtnEffect = document.querySelectorAll('.btnEffect');
+  hoverEffectbtnEffect.forEach((btnEffect) => {
+    btnEffect.addEventListener('mousemove', (e: any) => {
+      const left = e.clientX;
+      const top = e.clientY;
+      console.log(left);
+
+      e.target.children[0].style.left = left + 6 + 'px';
+      e.target.children[0].style.top = top - 120 + 'px';
+    });
+    btnEffect.addEventListener('mouseover', (e) => {});
+  });
+</script>
+<style>
+  .btnEffect {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+
+    background: white;
+    text-transform: capitalize;
+    font-weight: semi-bold;
+    position: relative;
+    border: none;
+  }
+
+  .btnEffect::before {
+    content: '';
+    display: block;
+    border-radius: 30px;
+    inset: 0;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+  }
+  .btnEffect:hover::before {
+    border-color: black;
+    transform: scale(0.96);
+
+    transition: 0.3s;
+  }
+  .btnEffect > img {
+    position: fixed;
+    display: block;
+    width: 180px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    opacity: 0;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .btnEffect:nth-child(odd):hover > img {
+    opacity: 1;
+
+    transform: rotate(-10deg);
+    transition:
+      opacity 0.35s ease-in-out,
+      transform 0.35s ease-in-out;
+  }
+
+  .btnEffect:nth-child(even):hover > img {
+    opacity: 1;
+    transform: rotate(10deg);
+    transition:
+      opacity 0.35s ease-in-out,
+      transform 0.35s ease-in-out;
+  }
+</style>

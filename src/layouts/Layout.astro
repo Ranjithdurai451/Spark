@@ -1,0 +1,89 @@
+---
+import Header from '../components/Header.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Astro Starter Kit',
+  description = 'Welcome to the Astro Starter Kit',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <script>
+      import Lenis from 'lenis';
+      const lenis = new Lenis({});
+      window.addEventListener('scroll', (e: any) => {
+        console.log(window.scrollY);
+      });
+
+      // lenis.on('scroll', (e: any) => {
+      //   // console.log(e);
+      // });
+
+      function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+    <Header />
+    <slot />
+  </body>
+</html>
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    border: none;
+    outline: none;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  .custom-bg-color {
+    background: rgb(246, 246, 246);
+  }
+  .custom-fill-color {
+    fill: rgb(246, 246, 246);
+  }
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+</style>

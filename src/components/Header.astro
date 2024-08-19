@@ -1,0 +1,103 @@
+---
+
+---
+
+<header
+  class="fixed left-0 top-0 px-12 py-6 flex items-center justify-between w-full z-[1]"
+>
+  <div class="text-white font-semibold text-4xl">Spark</div>
+
+  <nav
+    class="ml-16 flex items-center px-8 py-4 gap-8 bg-white bg-opacity-5 rounded-full font-medium text-sm text-white"
+  >
+    <a href="#home" class="link">Home</a>
+    <a href="#about" class="link">About Us</a>
+    <a href="#services" class="link">Services</a>
+    <a href="#contact" class="link">Contact Us</a>
+    <a href="#testimony" class="link">Testimonials</a>
+  </nav>
+
+  <div>
+    <a href="#" class="btn-flip" data-back="Now!" data-front="Get a Quote"></a>
+  </div>
+</header>
+
+<style>
+  :root {
+    --speed: 0.5s;
+    --color-white: #fff;
+  }
+  .link {
+    position: relative;
+  }
+  .link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+  }
+  .link:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .btn-flip {
+    opacity: 1;
+    outline: 0;
+    color: #fff;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+
+    &:hover {
+      &:after {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+      }
+
+      &:before {
+        opacity: 0;
+        transform: translateY(50%) rotateX(90deg);
+      }
+    }
+
+    &:after {
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      color: #323237;
+      display: block;
+      transition: var(--speed);
+      position: absolute;
+      background: #adadaf;
+      content: attr(data-back);
+      transform: translateY(-50%) rotateX(90deg);
+    }
+
+    &:before {
+      top: 0;
+      left: 0;
+      opacity: 1;
+      color: #adadaf;
+      display: block;
+      padding: 0 30px;
+      line-height: 40px;
+      transition: var(--speed);
+      position: relative;
+      background: #323237;
+      content: attr(data-front);
+      transform: translateY(0) rotateX(0);
+    }
+  }
+</style>
