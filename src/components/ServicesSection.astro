@@ -4,7 +4,7 @@ import Image from 'astro/components/Image.astro';
 
 <section
   id="services"
-  class="w-full h-dvh flex flex-col gap-10 py-20 px-16 custom-bg-color"
+  class="w-full min-h-dvh flex flex-col gap-10 py-20 px-16 custom-bg-color"
 >
   <h1
     class="text-5xl w-fit font-semibold before:content-[''] before:block before:h-[4px] before:rounded-lg relative before:absolute before:bg-black before:w-[45%] before:left-0 before:-bottom-[8px]"
@@ -12,9 +12,9 @@ import Image from 'astro/components/Image.astro';
     Our Services
   </h1>
 
-  <div class="w-full grid grid-cols-3 gap-5">
+  <div class="w-full grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-5">
     <div class="flex flex-col gap-4">
-      <div class="w-full h-[300px] overflow-hidden rounded-2xl">
+      <div class="w-full max-w-[435px] h-[300px] overflow-hidden rounded-2xl">
         <Image
           src="/service-1.jpeg"
           alt={'Digital Marketing'}
@@ -38,7 +38,7 @@ import Image from 'astro/components/Image.astro';
           src="/webservice.webp"
           alt={'Web Development'}
           width={100}
-          class={'rounded-2xl w-[100%] h-[300px] hover:scale-125 hover:transition hover:ease-in-out hover:duration-700 overflow-hidden'}
+          class={'rounded-2xl w-[100%] max-w-[435px] h-[300px] hover:scale-125 hover:transition hover:ease-in-out hover:duration-700 overflow-hidden'}
           height={300}
         />
       </div>
@@ -57,7 +57,7 @@ import Image from 'astro/components/Image.astro';
           src="/service-3.jpg"
           alt={'Graphic Design'}
           width={100}
-          class={'rounded-2xl w-[100%] h-[300px] hover:scale-125 hover:transition hover:ease-in-out hover:duration-700 overflow-hidden'}
+          class={'rounded-2xl w-[100%] max-w-[435px] h-[300px] hover:scale-125 hover:transition hover:ease-in-out hover:duration-700 overflow-hidden'}
           height={300}
         />
       </div>

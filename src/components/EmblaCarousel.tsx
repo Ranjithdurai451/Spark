@@ -98,7 +98,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     >
       <h1 className="text-5xl font-semibold ">Why People Love Us</h1>
       <div className="flex items-center gap-10 justify-center">
-        <div className="embla-wrapper">
+        <div className="h-[450px] w-[500px] bg-[rgba(0,0,0,0.1)]  justify-center items-end rounded-[20px] hidden lg:flex">
           <section className="embla" dir="rtl">
             <div className="embla__viewport" ref={emblaRef}>
               <div className="embla__container">

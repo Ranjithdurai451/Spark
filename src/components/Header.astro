@@ -3,12 +3,13 @@
 ---
 
 <header
-  class="fixed left-0 top-0 px-12 py-6 flex items-center justify-between w-full z-[1]"
+  id="header"
+  class="fixed left-0 top-0 px-12 py-4 flex items-center justify-between w-full z-[1]"
 >
-  <div class="text-white font-semibold text-4xl">Spark</div>
+  <div class="text-white font-semibold text-4xl logo">Spark</div>
 
   <nav
-    class="ml-16 flex items-center px-8 py-4 gap-8 bg-white bg-opacity-5 rounded-full font-medium text-sm text-white"
+    class="ml-16 hidden lg:flex items-center px-8 py-4 gap-8 bg-white bg-opacity-5 rounded-full font-medium text-sm text-white"
   >
     <a href="#home" class="link">Home</a>
     <a href="#about" class="link">About Us</a>
@@ -16,13 +17,51 @@
     <a href="#contact" class="link">Contact Us</a>
     <a href="#testimony" class="link">Testimonials</a>
   </nav>
-
   <div>
-    <a href="#" class="btn-flip" data-back="Now!" data-front="Get a Quote"></a>
+    <button class="btn-flip" data-back="Now!" data-front="Get a Quote"></button>
   </div>
 </header>
+<script>
+  var header = document.getElementById('header');
+  var prevscroll = 0;
+  window.addEventListener('scroll', () => {
+    console.log(window.scrollY);
+    if (window.scrollY > 700) header?.classList.add('white-theme');
+    else header?.classList.remove('white-theme');
+
+    let currentscroll = window.pageYOffset;
+
+    if (currentscroll > prevscroll) {
+      header?.classList.add('active');
+    } else {
+      header?.classList.remove('active');
+    }
+    prevscroll = currentscroll;
+  });
+</script>
 
 <style>
+  #header {
+    transition: top 0.8s ease-in-out;
+  }
+  .active {
+    top: -200px;
+  }
+  .white-theme {
+    background-color: #fff;
+    .logo {
+      color: black;
+    }
+    nav {
+      background-color: white;
+      .link {
+        color: black;
+      }
+      .link::before {
+        background-color: black;
+      }
+    }
+  }
   :root {
     --speed: 0.5s;
     --color-white: #fff;
