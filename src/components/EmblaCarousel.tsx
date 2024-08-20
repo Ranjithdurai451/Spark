@@ -117,7 +117,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           </section>
         </div>
 
-        <div className="container ">
+        <div className="container sm:w-[450px] w-[90%]">
           <div className="group">
             <button
               className="btn font-normal text-md"
