@@ -2,7 +2,10 @@
 import Button from './Button.astro';
 ---
 
-<section id="contact" class="text-gray-600 body-font relative py-[100px]">
+<section
+  id="contact"
+  class="text-gray-600 body-font relative py-[100px] pb-[150px]"
+>
   <div class="flex flex-col gap-5 mx-auto">
     <div class="flex flex-col text-center w-full">
       <h1
@@ -61,4 +64,12 @@ import Button from './Button.astro';
       </div>
     </div>
   </div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 15"
+    preserveAspectRatio="none"
+    class="absolute bottom-[-1px] lg:w-full h-[25dvh]"
+  >
+    <path d="M0 15 Q 50 0 100 15 L 100 15 0 15 Z" class="fill-black"></path>
+  </svg>
 </section>
