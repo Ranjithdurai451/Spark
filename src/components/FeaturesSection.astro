@@ -21,15 +21,6 @@ const SLIDES = [
 <EmblaCarousel client:load slides={SLIDES} options={OPTIONS} />
 
 <style is:global>
-  .embla-wrapper {
-    height: 450px;
-    width: 500px;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
   .embla {
     max-width: 48rem;
     /* margin: auto; */
@@ -38,6 +29,9 @@ const SLIDES = [
     --slide-height: 350px;
     --slide-spacing: 1rem;
     --slide-size: 100%;
+    * {
+      overflow: visible;
+    }
   }
   .embla__viewport {
     border-top-left-radius: 20px;
@@ -56,7 +50,7 @@ const SLIDES = [
     transform: translate3d(0, 0, 0);
     flex: 0 0 var(--slide-size);
     min-height: 0;
-    overflow: auto;
+    overflow: auto !important;
     width: 300px;
     /* border-top-left-radius: 20px;
     border-top-right-radius: 20px; */

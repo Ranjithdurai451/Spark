@@ -117,7 +117,7 @@ const ContactSection = () => {
                   )}
                 </div>
               </div>
-              <div className="w-full flex justify-center py-2">
+              <div className="w-full flex justify-center py-2 mb-3">
                 <button
                   type="submit"
                   className="px-10 py-2 rounded-lg bg-black text-white hover:bg-opacity-75 duration-300"
