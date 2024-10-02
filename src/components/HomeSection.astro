@@ -4,47 +4,90 @@ import Button from './Button.astro';
 
 <div
   id="home"
-  class="flex flex-col bg-yellow-200 items-center sm:justify-center min-w-full h-[125vh] relative pt-[250px] sm:pt-0"
+  class="flex flex-col bg-yellow-200 items-center sm:justify-center w-full h-[125vh] relative pt-[250px] sm:pt-0"
 >
   <div
     class="flex flex-col items-center justify-center md:w-[600px] gap-3 w-[90%]"
   >
-    <p class="text-white text-base">
+    <p class="text-white text-base animate">
       Web Development and Digital Marketing Firm
     </p>
-    <h1 class="text-white md:text-6xl font-bold text-center text-4xl">
+    <h1 class="text-white md:text-6xl font-bold text-center text-4xl animate">
       Grow your Business with Spark
     </h1>
     <p
-      class="text-white text-opacity-50 font-light text-base text-center w-[90%]"
+      class="text-white text-opacity-50 font-light text-base text-center w-[90%] animate"
     >
       Get a professional website and digital marketing support for your business
       within your budget.
     </p>
-
-    <Button variant="light" class="py-2 px-6">
-      <span>Let's Talk</span>
-      <svg
-        viewBox="0 0 24 24"
-        class="inline-block w-6 h-6 fill-current"
-        xmlns="http://www.w3.org/2000/svg"
-        ><path
-          d="M15.0378 6.34317L13.6269 7.76069L16.8972 11.0157L3.29211 11.0293L3.29413 13.0293L16.8619 13.0157L13.6467 16.2459L15.0643 17.6568L20.7079 11.9868L15.0378 6.34317Z"
-          fill="currentColor"></path></svg
-      ></Button
-    >
+    <div class="animate">
+      <Button variant="light" class="py-2 px-6">
+        <span>Let's Talk</span>
+        <svg
+          viewBox="0 0 24 24"
+          class="inline-block w-6 h-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="M15.0378 6.34317L13.6269 7.76069L16.8972 11.0157L3.29211 11.0293L3.29413 13.0293L16.8619 13.0157L13.6467 16.2459L15.0643 17.6568L20.7079 11.9868L15.0378 6.34317Z"
+            fill="currentColor"></path></svg
+        >
+      </Button>
+    </div>
   </div>
   <svg
     id="bend"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 100 15"
     preserveAspectRatio="none"
-    class="absolute bottom-[-1px] lg:w-full h-[25dvh]"
+    class="absolute bottom-[-1px] w-full"
   >
     <path d="M0 15 Q 50 0 100 15 L 100 15 0 15 Z" class="custom-fill-color"
     ></path>
   </svg>
 </div>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('.animate', {
+    y: 80,
+    opacity: 0,
+    duration: 1,
+    scale: 1.05,
+    stagger: 0.2,
+  });
+
+  gsap.from('.animate-testi-text', {
+    scrollTrigger: {
+      trigger: '.animate-testi',
+      start: 'top bottom',
+      end: 'bottom 40%',
+      // scrub: 1,
+    },
+    y: 80,
+    opacity: 0,
+    duration: 1,
+    scale: 1.05,
+    stagger: 0.2,
+  });
+  gsap.from('.animate-testi', {
+    scrollTrigger: {
+      trigger: '.animate-testi',
+      start: 'top bottom',
+      end: 'bottom 40%',
+      // scrub: 1,
+    },
+    y: 80,
+    opacity: 0,
+    duration: 2,
+    ease: 'elastic',
+
+    stagger: 0.2,
+  });
+</script>
 
 <style>
   #home {

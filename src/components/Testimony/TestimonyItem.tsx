@@ -14,7 +14,7 @@ type TestimonyItemProps = {
 };
 export const TestimonyItem: React.FC<TestimonyItemProps> = ({ data }) => (
   <div
-    className={`flex flex-col  gap-3 p-6 md:gap-5 md:p-8 bg-black bg-opacity-75 ${
+    className={`flex flex-col  gap-3 p-6 md:gap-5 md:p-8 bg-black bg-opacity-75 animate-testi ${
       !data?.isShowOnMobile ? 'hidden sm:flex' : ''
     }`}
   >

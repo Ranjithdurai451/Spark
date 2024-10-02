@@ -132,7 +132,7 @@ const ContactSection = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 15"
           preserveAspectRatio="none"
-          className="absolute bottom-[-1px] h-[25dvh] md:w-full"
+          className="absolute bottom-[-1px]  w-full"
         >
           <path
             d="M0 15 Q 50 0 100 15 L 100 15 0 15 Z"

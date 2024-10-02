@@ -6,10 +6,10 @@
   id="header"
   class="fixed left-0 top-0 px-12 py-4 flex items-center justify-between w-dvw z-[1]"
 >
-  <div class="text-white font-semibold text-4xl logo">Spark</div>
+  <div class="text-white font-semibold text-4xl logo animate-down">Spark</div>
 
   <nav
-    class="ml-16 hidden lg:flex items-center px-8 py-4 gap-8 bg-white bg-opacity-5 rounded-full font-medium text-sm text-white"
+    class="nav-bar ml-16 hidden lg:flex items-center px-8 py-4 gap-8 bg-white bg-opacity-5 rounded-full font-medium text-sm text-white"
   >
     <a href="#home" class="link">Home</a>
     <a href="#about" class="link">About Us</a>
@@ -17,10 +17,10 @@
     <a href="#contact" class="link">Contact Us</a>
     <a href="#testimony" class="link">Testimonials</a>
   </nav>
-  <div class="hidden lg:block">
+  <div class="hidden lg:block animate-down">
     <button class="btn-flip" data-back="Now!" data-front="Get a Quote"></button>
   </div>
-  <label class="hamburger z-[2] block lg:hidden" id="menu-btn">
+  <label class="hamburger z-[2] block lg:hidden animate-down" id="menu-btn">
     <input type="checkbox" id="menuBoolean" />
     <svg viewBox="0 0 32 32">
       <path
@@ -51,6 +51,27 @@
 </header>
 
 <script>
+  import gsap from 'gsap';
+  gsap.from('.link', {
+    opacity: 0,
+    y: -50,
+    stagger: 0.3,
+    duration: 1.5,
+    ease: 'elastic',
+  });
+  gsap.from('.animate-down', {
+    opacity: 0,
+    scale: 0.5,
+    y: -50,
+    stagger: 0.3,
+    duration: 1,
+  });
+  gsap.from('.nav-bar', {
+    opacity: 0,
+    duration: 0.6,
+    delay: 0.6,
+  });
+
   const mobLinks = document.querySelectorAll('.mob-link');
   mobLinks.forEach((mobLink) => {
     console.log();
