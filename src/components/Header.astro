@@ -51,27 +51,6 @@
 </header>
 
 <script>
-  import gsap from 'gsap';
-  gsap.from('.link', {
-    opacity: 0,
-    y: -50,
-    stagger: 0.3,
-    duration: 1.5,
-    ease: 'elastic',
-  });
-  gsap.from('.animate-down', {
-    opacity: 0,
-    scale: 0.5,
-    y: -50,
-    stagger: 0.3,
-    duration: 1,
-  });
-  gsap.from('.nav-bar', {
-    opacity: 0,
-    duration: 0.6,
-    delay: 0.6,
-  });
-
   const mobLinks = document.querySelectorAll('.mob-link');
   mobLinks.forEach((mobLink) => {
     console.log();
@@ -110,6 +89,25 @@
       header?.classList.remove('active');
     }
     prevscroll = currentscroll;
+  });
+  import gsap from 'gsap';
+  gsap.from('.link', {
+    opacity: 0,
+    y: -50,
+    stagger: 0.3,
+    duration: 2.5,
+    ease: 'elastic',
+  });
+  gsap.from('.animate-down', {
+    opacity: 0,
+    y: -50,
+    ease: 'elastic',
+    duration: 3,
+  });
+  gsap.from('.nav-bar', {
+    opacity: 0,
+    duration: 0.6,
+    delay: 0.6,
   });
 </script>
 

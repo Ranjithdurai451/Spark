@@ -8,37 +8,37 @@
   <div
     class="md:w-[650px] w-[90%] gap-6 flex flex-col items-center justify-center"
   >
-    <h1 class="text-5xl font-semibold text-center work-animate">
+    <h1 class="text-5xl font-semibold text-center">
       We Help Brands Increase Their Online Presence
     </h1>
-    <p class="text-base font-light text-center work-animate">
+    <p class="text-base font-light text-center">
       At Spark, we boost your brand's online visibility and engagement with
       tailored digital strategies. Let us help you attract new customers and
       grow your online presence effectively.
     </p>
     <div class="flex gap-4 flex-wrap justify-center">
-      <button class="btnEffect work-animate work-animate">
+      <button class="btnEffect">
         Real Estate Websites
         <img
           src="https://nexusinfo.in/wp-content/uploads/2024/04/1-1536x864.png"
           alt=""
         />
       </button>
-      <button class="btnEffect work-animate">
+      <button class="btnEffect">
         University/College Websites
         <img
           src="https://nexusinfo.in/wp-content/uploads/2024/04/5-1536x864.png"
           alt=""
         />
       </button>
-      <button class="btnEffect work-animate">
+      <button class="btnEffect">
         E-commerce Websites
         <img
           src="https://nexusinfo.in/wp-content/uploads/2024/04/4-1536x864.png"
           alt=""
         />
       </button>
-      <button class="btnEffect work-animate">
+      <button class="btnEffect">
         Portfolio Websites
         <img
           src="https://nexusinfo.in/wp-content/uploads/2024/04/3-1536x864.png"
@@ -46,35 +46,35 @@
         />
       </button>
 
-      <button class="btnEffect work-animate">
+      <button class="btnEffect">
         Healthcare Websites
         <img
           src="https://nexusinfo.in/wp-content/uploads/2024/04/2-1536x864.png"
           alt=""
         />
       </button>
-      <button class="btnEffect work-animate">
+      <button class="btnEffect">
         Educational Websites
         <img
           src="https://nexusinfo.in/wp-content/uploads/2024/06/Screenshot-2024-06-18-at-10.43.01%E2%80%AFAM-1536x867.png"
           alt=""
         />
       </button>
-      <button class="btnEffect work-animate">
+      <button class="btnEffect">
         Blogs/Personal Websites
         <img
           src="https://nexusinfo.in/wp-content/uploads/2024/06/Screenshot-2024-06-18-at-10.45.46%E2%80%AFAM-1536x826.png"
           alt=""
         />
       </button>
-      <button class="btnEffect work-animate">
+      <button class="btnEffect">
         News/Media Websites
         <img
           src="https://nexusinfo.in/wp-content/uploads/2024/06/Screenshot-2024-06-18-at-10.43.26%E2%80%AFAM-1536x867.png"
           alt=""
         />
       </button>
-      <button class="btnEffect work-animate">
+      <button class="btnEffect">
         Event Management Websites
         <img
           src="https://nexusinfo.in/wp-content/uploads/2024/06/Screenshot-2024-06-18-at-5.31.53%E2%80%AFPM-1536x826.png"
@@ -85,21 +85,6 @@
   </div>
 </section>
 <script>
-  import gsap from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.from('.work-animate', {
-    scrollTrigger: {
-      trigger: '.work-animate',
-      start: 'top bottom',
-      end: 'bottom 40%',
-    },
-    translateY: 80,
-    opacity: 0,
-    duration: 0.5,
-    scale: 1.2,
-    stagger: 0.2,
-  });
   const hoverEffectbtnEffect = document.querySelectorAll('.btnEffect');
   hoverEffectbtnEffect.forEach((btnEffect) => {
     btnEffect.addEventListener('mousemove', (e: any) => {
@@ -107,11 +92,11 @@
       const top = e?.clientY;
       const rect = e.target.getBoundingClientRect();
 
-      const parentleft = rect.left; // Distance from the left edge of the viewport
-      const parenttop = rect.top;
+      // const parentleft = rect.left; // Distance from the left edge of the viewport
+      // const parenttop = rect.top;
 
-      e.target.children[0].style.left = left - parentleft + 6 + 'px';
-      e.target.children[0].style.top = top - parenttop - 120 + 'px';
+      e.target.children[0].style.left = left + 6 + 'px';
+      e.target.children[0].style.top = top - 120 + 'px';
     });
     btnEffect.addEventListener('mouseover', (e) => {});
   });
