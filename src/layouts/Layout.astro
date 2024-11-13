@@ -6,10 +6,8 @@ interface Props {
   description?: string;
 }
 
-const {
-  title = 'Astro Starter Kit',
-  description = 'Welcome to the Astro Starter Kit',
-} = Astro.props;
+const { title = 'Spark', description = ' Grow your Business with Spark' } =
+  Astro.props;
 ---
 
 <!doctype html>
@@ -20,7 +18,8 @@ const {
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
