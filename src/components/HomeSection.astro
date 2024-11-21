@@ -5,7 +5,7 @@ import Image from 'astro/components/Image.astro';
 
 <div
   id="home"
-  class="flex flex-col bg-yellow-200 items-center sm:justify-center w-full h-[125vh] relative pt-[250px] sm:pt-0"
+  class="flex flex-col bg-yellow-200 items-center pt-[35dvh] w-full h-[125vh] relative"
 >
   <div
     class="flex flex-col items-center justify-center md:w-[600px] gap-3 w-[90%]"
@@ -47,13 +47,14 @@ import Image from 'astro/components/Image.astro';
     ></path>
   </svg>
 </div>
-<Image
+<!-- <Image
   src="/home.jpg"
   class="w-full h-[125dvh] absolute inset-0 z-[-1] object-cover"
   width={100}
   height={100}
   alt={'hero'}
-/>
+  quality={10}
+/> -->
 
 <script>
   import gsap from 'gsap';
@@ -87,10 +88,11 @@ import Image from 'astro/components/Image.astro';
   #home {
     position: relative;
     background: linear-gradient(
-      rgb(27, 32, 34) 0%,
-      rgba(27, 32, 34, 0.65) 18.84%,
-      rgb(27, 32, 34) 100%
-    );
+        rgb(27, 32, 34) 0%,
+        rgba(27, 32, 34, 0.65) 18.84%,
+        rgb(27, 32, 34) 100%
+      ),
+      url(/home.jpg);
     background-size: cover;
   }
 </style>

@@ -96,7 +96,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       id="about"
       className="w-full h-dvh bg-white flex  items-center justify-center flex-col gap-10 pt-[75px]"
     >
-      <h1 className="text-5xl font-semibold px-6 ">Why People Love Us</h1>
+      <h1 className="sm:text-5xl text-4xl font-semibold px-6 ">
+        Why People Love Us
+      </h1>
       <div className="flex items-center gap-10 justify-center">
         <div className=" h-[450px] w-[500px] bg-[rgba(0,0,0,0.1)]  justify-center items-end rounded-[20px] hidden lg:flex">
           <section className="embla" dir="rtl">
